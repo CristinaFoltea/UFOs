@@ -1,8 +1,10 @@
 // import the data from data.js
 const tableData = data;
 
+let filters = {}
 function buildTable(data) {
   // First, clear out any existing data
+  const tbody = d3.select("tbody")
   tbody.html("");
 
   // Next, loop through each object in the data
@@ -22,23 +24,51 @@ function buildTable(data) {
   });
 }
 
-function handleClick() {
-  // Grab the datetime value from the filter
-  let date = d3.select("#datetime").property("value");
+applyFilters = () => {
+  d3.event.preventDefault()
+  
   let filteredData = tableData;
 
-  // Check to see if a date was entered and filter the
-  // data using that date.
-  if (date) {
-    // Apply `filter` to the table data to only keep the
-    // rows where the `datetime` value matches the filter value
-    filteredData = filteredData.filter(row => row.datetime === date);
-  };
+  // If we have any filters saved 
+  // apply them
+  const filtersExist = !!Object.keys(filters).length && Object.keys(filters).filter( key => !!filters[key]).length > 0
 
+  if (filtersExist) {
+    // Apply filters to the table data
+    filteredData = filteredData.filter(row => {
+      return Object.keys(filters).every(filterKey => row[filterKey].toLowerCase() === filters[filterKey].toLowerCase())
+    });
+  }
+  
   // Rebuild the table using the filtered data
   // @NOTE: If no date was entered, then filteredData will
   // just be the original tableData.
   buildTable(filteredData);
 };
+
+saveInput = () => {
+  // saving the value of the input being filled
+  filters[d3.event.target.name] = d3.event.target.value
+}
+
+clearFilters = () => {
+  // removing the input values and the filter data
+  Object.keys(filters).forEach( filterKey => {
+    console.log(filters[filterKey])
+    // if we have value saved for that filter
+    if (filters[filterKey]) {
+      // find the input with that id and clear the value
+      document.getElementById(filterKey).value = ""
+      // clear the value in the filter object
+      filters[filterKey] = ""
+    }
+  })
+  // a fresh search without filters
+  buildTable(tableData)
+}
+
+d3.select("#filter-btn").on("click", applyFilters);
+d3.select("#clear-filter-btn").on("click", clearFilters);
+d3.selectAll("input").on("keyup", saveInput)
 
 buildTable(tableData);

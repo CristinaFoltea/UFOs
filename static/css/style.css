@@ -1,0 +1,119 @@
+body {
+  color: #f7f7f7;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.jumbotron {
+  background-image: url("../images/nasa.jpg");
+  background-size: 100% 100%;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.list-group-item label {
+  display: block;
+}
+
+.list-group-item input {
+  width: 100%;
+  background-color: #f7f7f7;
+  border: none;
+}
+
+.list-group-item input::placeholder {
+  font-size: 14px;
+  opacity: 0.3;
+}
+
+#filter-btn {
+  width: 100%;
+  background-color: #23272b;
+}
+
+#filter-btn:hover {
+  background-color: #000;
+  transition: all 400ms ease-out;
+}
+
+.container-fluid.intro {
+  padding: 20px 40px;
+}
+
+h1,
+h3 {
+  font-family: 'Changa', sans-serif;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  color: #D7D8D9;
+}
+
+thead {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background-color: #272C30;
+}
+
+.container-fluid.table {
+  flex-grow: 1;
+  margin-bottom: 0;
+  background: #0F192A;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.table thead th {
+  border-color: transparent;
+}
+
+.table tr td {
+  font-size: 14px;
+  border-color: transparent;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: #4A535C;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #343a40;
+}
+
+#filter-form p,
+#filter-form a {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  padding: .75rem;
+  padding-left: 20px;
+  margin-bottom: 0;
+  background-color: #272C30;
+}
+
+.filter-form__header {
+  display: flex;
+  flex-direction: row;
+}
+
+.filter-form__header .filter-form__header--title {
+  flex: 1;
+}
+
+#filter-form a {
+  padding-right: 20px;
+}
+#filter-form a:hover {
+  text-decoration: none;
+}
+
+input {
+  padding: 2px 6px;
+
+}
