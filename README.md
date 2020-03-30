@@ -1,5 +1,9 @@
 # UFOs
 
-Interactive webpage that allow readers to parse the data around UFO sightings using HTML, CSS, Javascript, d3 and Bootstrap. The user has the ability to filter by date, city, state, country and shape. And as bonus the user has the ability to clear all filter at a button click.
+Interactive webpage that allows readers to view the data around UFO sightings. The user has ability to filter the data by date, city,state, country and object shape. And as a bonus a clear filter was added to give the user a easy way to clear any existing filters.
 
 As further development I would offer also a map view beside the existing table view. 
+
+## Technologies used:
+
+HTML, CSS, Javascript, d3 and Bootstrap
