@@ -6,4 +6,4 @@ As a further development, I would offer a map view beside the existing table vie
 
 ## Technologies used:
 
-HTML, CSS, Javascript, d3 and Bootstrap
+HTML, CSS, Javascript, D3 and Bootstrap
